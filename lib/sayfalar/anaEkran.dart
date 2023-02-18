@@ -27,7 +27,7 @@ class _AnaEkranState extends State<AnaEkran> {
       );
     }
 
-    GestureDetector button3(buttonid) {
+    GestureDetector button3(buttonid, buttonAdi) {
       return GestureDetector(
         onTap: () {
           setState(() {
@@ -37,7 +37,7 @@ class _AnaEkranState extends State<AnaEkran> {
         child: AnimatedContainer(
             child: Center(
                 child: Text(
-              "OKEY",
+              buttonAdi,
               style: TextStyle(fontSize: 26, color: Colors.white),
             )),
             duration: const Duration(microseconds: 200),
@@ -61,25 +61,29 @@ class _AnaEkranState extends State<AnaEkran> {
       );
     }
 
+    SizedBox bosluk() {
+      return const SizedBox(
+        height: 20,
+      );
+    }
+
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            button3(1),
-            const SizedBox(
-              height: 20,
+            button3(1, "OKEY"),
+            bosluk(),
+            button3(2, "BATAK"),
+            bosluk(),
+            button3(2, "PİŞTİ"),
+            bosluk(),
+            button3(3, "KİNG"),
+            Divider(
+              color: Colors.grey,
+              height: 100,
             ),
-            button3(2),
-            const SizedBox(
-              height: 20,
-            ),
-            button3(2),
-            const SizedBox(
-              height: 20,
-            ),
-            button3(3),
           ],
         ),
       ),
